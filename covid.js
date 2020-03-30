@@ -15,7 +15,7 @@ const prefix = process.env.prefix;
 const client = new Client();
 
 async function getData(country) {
-    const response = await fetch(auth.url + country);
+    const response = await fetch(process.env.url + country);
     const data = await response.json();
     return data;
 }
