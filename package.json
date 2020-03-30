@@ -1,0 +1,12 @@
+{
+  "name": "covidbot",
+  "version": "1.0.0",
+  "main": "covid.js",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.1.1",
+    "markdown-table": "^2.0.0",
+    "node-fetch": "^2.6.0",
+    "table": "^5.4.6"
+  }
+}
