@@ -4,7 +4,7 @@ const {
 } = require('discord.js');
 const fetch = require('node-fetch');
 const auth = require('./auth.json');
-const countryJson = require('/countries.json');
+const countryJson = require('./countries.json');
 
 
 let tempCountry = null;
