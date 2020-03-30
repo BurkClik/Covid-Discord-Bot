@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "covid.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node covid.js"
+  },
   "dependencies": {
     "discord.js": "^12.1.1",
     "markdown-table": "^2.0.0",
