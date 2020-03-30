@@ -4,7 +4,7 @@ const {
 } = require('discord.js');
 const fetch = require('node-fetch');
 const auth = require('./auth.json');
-const countryJson = require('./countries.json');
+const countryJson = require('/countries.json');
 
 
 let tempCountry = null;
@@ -14,11 +14,11 @@ const prefix = process.env.prefix;
 // Create an instance of a Discord client
 const client = new Client();
 
-/* async function getData(country) {
+async function getData(country) {
     const response = await fetch(process.env.url + country);
     const data = await response.json();
     return data;
-} */
+}
 
 /**
  * The ready event is vital, it means that only _after_ this will your bot start reacting to information
@@ -28,13 +28,8 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', message => {
-    if (message === 'ping') {
-        message.channel.send('pong');
-    }
-})
 
-/* client.on('message', message => {
+client.on('message', message => {
     if (message.content.startsWith(prefix)) {
         var country = message.content.slice(prefix.length);
         tempCountry = countryJson[country];
@@ -58,6 +53,6 @@ client.on('message', message => {
             message.channel.send('Düzgün yaz şunu mübarek');
         }
     }
-}); */
+});
 
 client.login(process.env.TOKEN);
