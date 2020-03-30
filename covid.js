@@ -8,7 +8,7 @@ const countryJson = require('./countries.json');
 
 
 let tempCountry = null;
-const prefix = auth.prefix;
+const prefix = process.env.prefix;
 
 
 // Create an instance of a Discord client
@@ -55,4 +55,4 @@ client.on('message', message => {
     }
 });
 
-client.login(auth.token);
+client.login(process.env.TOKEN);
