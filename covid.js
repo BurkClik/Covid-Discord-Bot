@@ -7,7 +7,8 @@ const auth = require('./auth.json');
 const countryJson = require('./countries.json');
 
 //  Parse Json
-var parseCountry = JSON.parse(countryJson)
+var stringifyCountry = JSON.stringify(countryJson)
+var parseCountry = JSON.parse(stringifyCountry)
 var listCountry = ""
 for (let [key, value] of Object.entries(parseCountry)) {
     listCountry += `${key} -> ${value}\n`
