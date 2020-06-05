@@ -65,11 +65,11 @@ client.on('message', message => {
                         .setTimestamp(response["updated"])
                     message.channel.send(embed);
                 }).catch(err => console.log(err))
-        } else if (country === 'yardım') {
+/*         } else if (country === 'yardım') {
             const help = new MessageEmbed()
                 .setTitle("Covid19")
                 .setDescription(`Verileri görebilmek için !covidülkeismi şeklinde giriş yapmalısınız.\n${listCountry}`)
-            message.channel.send(help)
+            message.channel.send(help) */
         } else if (tempCountry === undefined) {;
             message.channel.send('Düzgün yaz şunu mübarek');
         }
