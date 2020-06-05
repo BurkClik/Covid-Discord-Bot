@@ -27,13 +27,15 @@ async function getData(country) {
 client.on('ready', () => {
     console.log('I am ready!');
 
-    // 706463146029875302    
+    // 706463146029875302
+    // 700350409969238069
+    //     
     var testChannel = client.channels.cache.find(channel => channel.id === '706463146029875302')
 
 
     setInterval(() => {
-        testChannel.send("Merhaba")
-    }, 10000);
+        testChannel.send("**Black Lives Matter**")
+    }, 3600000);
 });
 
 
