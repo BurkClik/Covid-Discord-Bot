@@ -6,6 +6,12 @@ const fetch = require('node-fetch');
 const auth = require('./auth.json');
 const countryJson = require('./countries.json');
 
+//  Parse Json
+var parseCountry = JSON.parse(countryJson)
+var listCountry = ""
+for (let [key, value] of Object.entries(parseCountry)) {
+    listCountry += `${key} -> ${value}\n`
+}
 
 let tempCountry = null;
 const prefix = process.env.prefix;
@@ -26,15 +32,15 @@ async function getData(country) {
  */
 client.on('ready', () => {
     console.log('I am ready!');
-
-    // 706463146029875302
-    // 700350409969238069
-    //     
-    var testChannel = client.channels.cache.find(channel => channel.id === '706463146029875302')
-
+  
+    var talipChannel = client.channels.cache.find(channel => channel.id === '706463146029875302')
+    var darkChannel = client.channels.cache.find(channel => channel.id === '700350409969238069')
+    var rhesienChannel = client.channels.cache.find(channel => channel.id === '710092561666277399')
 
     setInterval(() => {
-        testChannel.send("**Black Lives Matter**")
+        talipChannel.send("**Black Lives Matter**")
+        darkChannel.send("**Black Lives Matter")
+        rhesienChannel.send("**Black Lives Matter")
     }, 3600000);
 });
 
@@ -58,7 +64,11 @@ client.on('message', message => {
                                 Toplam Vefat: **${response.deaths}**`)
                         .setTimestamp(response["updated"])
                     message.channel.send(embed);
-                }).catch(err => console.log(err));
+                }).catch(err => console.log(err))
+        } else if (country === 'help') {
+            const help = new MessageEmbed()
+                .setTitle("Covid19")
+                .setDescription(`Verileri görebilmek için !covidülkeismi şeklinde giriş yapmalısınız.\n${listCountry}`)
         } else if (tempCountry === undefined) {;
             message.channel.send('Düzgün yaz şunu mübarek');
         }
