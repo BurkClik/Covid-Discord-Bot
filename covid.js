@@ -40,8 +40,8 @@ client.on('ready', () => {
 
     setInterval(() => {
         talipChannel.send("**Black Lives Matter**")
-        darkChannel.send("**Black Lives Matter")
-        rhesienChannel.send("**Black Lives Matter")
+        darkChannel.send("**Black Lives Matter**")
+        rhesienChannel.send("**Black Lives Matter**")
     }, 3600000);
 });
 
