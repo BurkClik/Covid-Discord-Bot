@@ -10,8 +10,8 @@ const countryJson = require('./countries.json');
 var stringifyCountry = JSON.stringify(countryJson)
 var parseCountry = JSON.parse(stringifyCountry)
 var listCountry = ""
-for (let [key, value] of Object.entries(parseCountry)) {
-    listCountry += `${key} -> ${value}\n`
+for (let [key] of Object.entries(parseCountry)) {
+    listCountry += `${key}\n`
 }
 
 let tempCountry = null;
@@ -69,7 +69,7 @@ client.on('message', message => {
         } else if (country === 'yardım') {
             const help = new MessageEmbed()
                 .setTitle("Covid19")
-                .setDescription(`Verileri görebilmek için !covidülkeismi şeklinde giriş yapmalısınız.\n${listCountry}`)
+                .setDescription(`**Verileri görebilmek için !covidülkeismi şeklinde giriş yapmalısınız**.\n${listCountry}`)
             message.channel.send(help)
         } else if (tempCountry === undefined) {;
             message.channel.send('Düzgün yaz şunu mübarek');
