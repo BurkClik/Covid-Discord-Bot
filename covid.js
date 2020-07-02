@@ -75,7 +75,7 @@ client.on('message', message => {
             message.channel.send('Düzgün yaz şunu mübarek');
         } else if (country === 'gerisayim') {
             function gerisayim(seconds) {
-                for (var i = seconds; 0 < seconds; i--) {
+                for (var i = 10; 0 < 10; i--) {
                     setTimeout(function() {message.channel.send(i)}, 1000)    
                 }
             }
