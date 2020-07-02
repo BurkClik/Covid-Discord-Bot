@@ -40,7 +40,7 @@ client.on('ready', () => {
 
     setInterval(() => {
         talipChannel.send("**Black Lives Matter**")
-        darkChannel.send("**Black Lives Matter**")
+        darkChannel.send("**Uykum geldi çok uyumak istiyorum**")
         rhesienChannel.send("**Black Lives Matter**")
     }, 3600000);
 });
@@ -73,13 +73,6 @@ client.on('message', message => {
             message.channel.send(help)
         } else if (tempCountry === undefined) {;
             message.channel.send('Düzgün yaz şunu mübarek');
-        } else if (country === 'gerisayim') {
-            function gerisayim(seconds) {
-                for (var i = 10; 0 < 10; i--) {
-                    setTimeout(function() {message.channel.send(i)}, 1000)    
-                }
-            }
-            gerisayim();
         }
     }
 });
