@@ -46,7 +46,7 @@ client.on('ready', () => {
   
     var talipChannel = client.channels.cache.find(channel => channel.id === '706463146029875302')
     var darkChannel = client.channels.cache.find(channel => channel.id === '700350409969238069')
-    var Rhesien = client.channel.cache.find(channel => channel.id === '436432556288770048')
+    var Rhesien = client.channel.cache.find(channel => channel.id === '590981277507649536')
 
     setInterval(() => {
         talipChannel.send("**Black Lives Matter**")
