@@ -49,14 +49,12 @@ client.on('ready', () => {
     var Rhesien = client.channel.cache.find(channel => channel.id === '590981277507649536')
 
     setInterval(() => {
+        a = aliyeSov()
         talipChannel.send("**Black Lives Matter**")
         darkChannel.send("**Uykum geldi çok uyumak istiyorum**")
+        Rhesien.send(a)
     }, 3600000);
 
-    setInterval(() => {
-        a = aliyeSov()
-        Rhesien.send(a)
-    }, 1000)
 });
 
 
