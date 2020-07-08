@@ -19,4 +19,3 @@ lerna-debug.log*
 *.json
 !package.json
 !countries.json
-!kufur.json

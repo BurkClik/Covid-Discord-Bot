@@ -5,7 +5,6 @@ const {
 const fetch = require('node-fetch');
 const auth = require('./auth.json');
 const countryJson = require('./countries.json');
-const aliKufur = require('./kufur.json');
 
 //  Parse Json
 var stringifyCountry = JSON.stringify(countryJson)
@@ -17,7 +16,6 @@ for (let [key] of Object.entries(parseCountry)) {
 
 let tempCountry = null;
 const prefix = process.env.prefix;
-const prefix_2 = process.env.prefix_2;
 
 
 // Create an instance of a Discord client
@@ -29,32 +27,12 @@ async function getData(country) {
     return data;
 }
 
-
-// Ali küfür
-function aliyeSov() {
-    newRandom = Math.floor(Math.random() * 3);
-    return aliKufur[newRandom]
-}
-
-
 /**
  * The ready event is vital, it means that only _after_ this will your bot start reacting to information
  * received from Discord
  */
 client.on('ready', () => {
     console.log('I am ready!');
-  
-    var talipChannel = client.channels.cache.find(channel => channel.id === '706463146029875302')
-    var darkChannel = client.channels.cache.find(channel => channel.id === '700350409969238069')
-    var Rhesien = client.channel.cache.find(channel => channel.id === '590981277507649536')
-
-    setInterval(() => {
-        a = aliyeSov()
-        talipChannel.send("**Black Lives Matter**")
-        darkChannel.send("**Uykum geldi çok uyumak istiyorum**")
-        Rhesien.send(a)
-    }, 3600000);
-
 });
 
 
@@ -86,9 +64,6 @@ client.on('message', message => {
         } else if (tempCountry === undefined) {;
             message.channel.send('Düzgün yaz şunu mübarek');
         }
-    } else if (message.content.startsWith(prefix_2)) {
-        a = aliyeSov();
-        message.channel.send(a);
     }
 });
 
