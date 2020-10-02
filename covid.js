@@ -64,9 +64,7 @@ client.on("message", (message) => {
           `**Verileri görebilmek için !covidülkeismi şeklinde giriş yapmalısınız**.\n${listCountry}`
         );
       message.channel.send(help);
-    } else if (tempCountry === undefined) {
-      message.channel.send("Düzgün yaz şunu mübarek");
-    } else if (country === "belirti") {
+    }  else if (country === "belirti") {
       message.channel.send(
         "**En yaygın semptomlar**x:\n\
             ateş\n\
@@ -91,6 +89,9 @@ client.on("message", (message) => {
         "Maske tak\nEvden Çıkma\nTemastan kaçın\nSosyal mesafe\n\
             Unutmayın elimizde virüse karşı büyük bir güç var. O da yakalanmamak..."
       );
+    }
+	else if (tempCountry === undefined) {
+      message.channel.send("Düzgün yaz şunu mübarek");
     }
   }
 });
