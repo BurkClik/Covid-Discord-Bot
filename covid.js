@@ -64,33 +64,37 @@ client.on("message", (message) => {
           `**Verileri görebilmek için !covidülkeismi şeklinde giriş yapmalısınız**.\n${listCountry}`
         );
       message.channel.send(help);
-    }  else if (country === "belirti") {
-      message.channel.send(
-        "**En yaygın semptomlar**x:\n\
-            ateş\n\
-            kuru öksürük\n\
-            yorgunluk\n\n\
-            **daha seyrek görülen semptomlar**:\n\
-            ağrı ve sızı\n\
-            boğaz ağrısı\n\
-            ishal\n\
-            konjunktivit\n\
-            baş ağrısı\n\
-            tat alma veya koku duyusunun kaybı\n\
-            ciltte döküntü ya da el veya ayak parmaklarında renk değişim\n\n\
-            **Ciddi semptomlar**:\n\
-            solunum güçlüğü veya nefes darlığı\n\
-            göğüs ağrısı veya göğüste baskı\n\
-            konuşma veya hareket kaybı\
-            "
-      );
+    } else if (country === "belirti") {
+      const symptoms = new MessageEmbed().setTitle("Belirtiler")
+        .setDescription(`**En yaygın semptomlar**:
+      •ateş
+      •kuru öksürük
+      •yorgunluk
+
+**daha seyrek görülen semptomlar**:
+      •ağrı ve sızı
+      •boğaz ağrısı
+      •ishal
+      •konjunktivit
+      •baş ağrısı
+      •tat alma veya koku duyusunun kaybı
+      •ciltte döküntü ya da el veya ayak parmaklarında renk değişimi
+
+**Ciddi semptomlar**:
+      •solunum güçlüğü veya nefes darlığı
+      •göğüs ağrısı veya göğüste baskı
+      •konuşma veya hareket kaybı
+      `);
+      message.channel.send(symptoms);
     } else if (country === "önlem") {
-      message.channel.send(
-        "Maske tak\nEvden Çıkma\nTemastan kaçın\nSosyal mesafe\n\
-            Unutmayın elimizde virüse karşı büyük bir güç var. O da yakalanmamak..."
-      );
-    }
-	else if (tempCountry === undefined) {
+      const precautions = new MessageEmbed().setTitle("Önlemler")
+        .setDescription(`•Maske tak
+      •Evden Çıkma
+      •Temastan kaçın
+      •Sosyal mesafe
+      •Unutmayın elimizde virüse karşı büyük bir güç var. O da yakalanmamak...`);
+      message.channel.send(precautions);
+    } else if (tempCountry === undefined) {
       message.channel.send("Düzgün yaz şunu mübarek");
     }
   }
